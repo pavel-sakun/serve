@@ -308,6 +308,7 @@ public class WorkerThread implements Runnable {
             for (int i = 0; backendChannel.size() > 0 && i < model.getParallelLevel(); i++) {
                 backendChannel.get(i).disconnect();
             }
+            backendChannel.clear();
             currentThread.set(null);
             Integer exitValue = lifeCycle.getExitValue();
 
